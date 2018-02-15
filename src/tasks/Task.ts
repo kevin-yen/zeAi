@@ -1,5 +1,5 @@
 interface Task {
-  run(): void;
+  execute(creep: Creep): boolean;
 }
 
 export default Task;

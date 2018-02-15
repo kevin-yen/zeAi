@@ -1,3 +1,5 @@
+import "./prototypes/RoomPosition";
+
 import { Colony } from "Colony";
 import { ErrorMapper } from "utils/ErrorMapper";
 
@@ -11,5 +13,7 @@ export const loop = ErrorMapper.wrapLoop(() => {
     }
   }
 
-  const colony = new Colony();
+  const colony = new Colony(Object.values(Game.rooms));
+
+  console.log(colony.rooms);
 });

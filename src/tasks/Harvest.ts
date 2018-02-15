@@ -1,13 +1,23 @@
 import Task from "./Task";
 
-export class Harvest implements Task {
-  private source: Source;
+export type Mine = Source | Mineral;
 
-  constructor(source: Source) {
-    this.source = source;
+export default class Harvest implements Task {
+  private mine: Mine;
+
+  constructor(mine: Mine) {
+    this.mine = mine;
   }
 
-  public run(): void {
-    console.log("Harvesting from " + this.source);
+  public execute(creep: Creep): boolean {
+    creep.harvest(this.mine);
+
+    if (creep.carryCapacity === 0 || _.sum(creep.carry) < creep.carryCapacity) {
+      console.log(creep + " harvested from " + this.mine);
+
+      return true;
+    }
+
+    return false;
   }
 }
