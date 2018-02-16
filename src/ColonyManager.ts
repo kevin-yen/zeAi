@@ -6,9 +6,15 @@ import Transfer from "./tasks/Transfer";
 
 export default class Executive {
     private colony: Colony;
+    private creeps: Creep[];
 
-    constructor(colony: Colony) {
+    constructor(colony: Colony, creeps: Creep[]) {
         this.colony = colony;
+        this.creeps = creeps;
+    }
+
+    public get creeps(): Creep[] {
+        return this.creeps;
     }
 
     public getTasks(): Task[] {

@@ -1,19 +1,11 @@
-import Executive from "Executive";
-
 class Colony {
 
-    private _executive: Executive;
     private _rooms: Room[];
     private name: string;
-    private creeps: Creep[];
 
     constructor(name: string, rooms: Room[]) {
         this._rooms = rooms;
         this.name = name;
-    }
-
-    get executive(): Executive | null {
-        return null;
     }
 
     get rooms(): Room[] {
@@ -21,7 +13,8 @@ class Colony {
     }
 
     get structures(): Structure[] {
-        return this._rooms.reduce((structures, room) => structures.concat(room.find(FIND_STRUCTURES)), [] as Structure[]);
+        return this._rooms
+            .reduce((structures, room) => structures.concat(room.find(FIND_STRUCTURES)), [] as Structure[]);
     }
 
     get spawns(): StructureSpawn[] {
