@@ -1,6 +1,6 @@
-import Objective from "./Objective";
 import Task from "../tasks/Task";
+import Objective from "./Objective";
 
-export class RechargeSpawn implements Objective {
+export default class RechargeSpawn implements Objective {
     public tasks: Task[];
 }

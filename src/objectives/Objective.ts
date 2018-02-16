@@ -1,5 +1,7 @@
 import Task from "../tasks/Task";
 
-export interface Objective {
+interface Objective {
     tasks: Task[];
 }
+
+export default Objective;
