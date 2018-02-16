@@ -1,5 +1,5 @@
 interface Role {
-  run(): void;
+    run(): void;
 }
 
 export default Role;

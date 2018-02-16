@@ -1,3 +1,3 @@
 interface RoomPosition {
-  getRange(pos: RoomPosition): number;
+    getRange(pos: RoomPosition): number;
 }
